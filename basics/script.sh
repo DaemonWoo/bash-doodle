@@ -18,7 +18,7 @@ echo "1 string - $*"
 # current shell process id
 echo "shell process id: $$"
 
-# exit status of the last command 
+# exit status of the last command
 echo "exit status: $?"
 
 # process id(PID) of the most recent background job
@@ -31,7 +31,7 @@ echo "Shell options: $-"
 
 echo "For loop:"
 for arg in "$@"; do
-    echo "arg: $arg"
+	echo "arg: $arg"
 done
 
 # command
@@ -42,23 +42,23 @@ echo "Today is $today"
 sum=$((2 + 3))
 echo "The sum is $sum"
 
-count=$(wc -l < script.sh)
+count=$(wc -l <script.sh)
 next=$((count + 1))
 echo "Next: $next"
 
 # overwrite file
-echo hello > out.txt
+echo hello >out.txt
 # append to a file
-echo world >> out.txt
+echo world >>out.txt
 
 # take input from a file
-sort < names.txt
+sort <names.txt
 
 # send standard error
-ls no_such_file 2> error.txt
+ls no_such_file 2>error.txt
 
-# send 
-ls &> all.txt
+# send
+ls &>all.txt
 
 cat file.txt | wc -l
 
@@ -78,3 +78,34 @@ echo "Escaping:"
 echo hello\" world
 echo 'hello $USER'
 echo "hello $USER"
+
+# if
+name="Alex"
+
+if [[ $name == A* ]]; then
+	echo "hi"
+else
+	echo "who are you?"
+fi
+# or test
+if test $name = "Alex"; then
+	echo "hi"
+else
+	echo "who are you?"
+fi
+
+# case
+
+read -r answer
+
+case "$answer" in
+yes | y)
+	echo "you said yes"
+	;;
+no | n)
+	echo "you said no"
+	;;
+*)
+	echo "unknown answer"
+	;;
+esac
