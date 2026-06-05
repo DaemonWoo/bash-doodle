@@ -1,0 +1,5 @@
+all.txt
+error.txt
+names.txt
+out.txt
+script.sh
