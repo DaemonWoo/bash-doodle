@@ -95,7 +95,6 @@ else
 fi
 
 # case
-
 read -r answer
 
 case "$answer" in
