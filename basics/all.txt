@@ -1,5 +1,15 @@
+advanced.sh
 all.txt
+arrays
+data.gz
 error.txt
+errors.log
+functions
+loops
 names.txt
+one
 out.txt
+output
 script.sh
+seed.sh
+text.txt

@@ -30,3 +30,13 @@ done
 for arg in "$@"; do
 	echo "$arg"
 done
+
+# select - simple menu loop
+select choice in Start Stop Exit; do
+	case "$choice" in
+	Start) echo "starting" ;;
+	Stop) echo "stopping" ;;
+	Exit) break ;;
+	*) echo "invalid choise" ;;
+	esac
+done

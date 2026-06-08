@@ -21,6 +21,10 @@ echo "shell process id: $$"
 # exit status of the last command
 echo "exit status: $?"
 
+if grep "foo" file.txt; then
+  echo "found"
+fi
+
 # process id(PID) of the most recent background job
 echo $!
 
@@ -94,6 +98,8 @@ else
 	echo "who are you?"
 fi
 
+trap 'echo "caught Ctrl+C"' INT
+
 # case
 read -r answer
 
@@ -108,3 +114,19 @@ no | n)
 	echo "unknown answer"
 	;;
 esac
+
+# pattern template
+# % - delete from tail
+# %% - delete from tail 1st match to the start
+# * - any symbols
+# # - delete from start
+# ## - delete the longest match from the start
+# ${var#pattern}
+file="photo.jpg"
+echo "${file%.jpg}"
+
+# Masks
+# *.txt - any symbols
+# ?.txt - any symbol
+# [abc].txt - 1 symbol from set
+# [a-z].txt - 1 symbol from range
