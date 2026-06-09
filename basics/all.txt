@@ -5,6 +5,7 @@ data.gz
 error.txt
 errors.log
 functions
+inout.sh
 loops
 names.txt
 one
